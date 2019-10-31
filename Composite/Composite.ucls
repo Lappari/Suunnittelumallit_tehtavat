@@ -39,7 +39,7 @@
   </interface>  
   <class id="5" language="java" name="model.Koostekomponentti" project="Composite" 
     file="/Composite/src/model/Koostekomponentti.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="864" y="399"/>    
+    <position height="-1" width="-1" x="921" y="388"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,7 +48,7 @@
   </class>  
   <class id="6" language="java" name="model.Laiteosa" project="Composite" file="/Composite/src/model/Laiteosa.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="685" y="394"/>    
+    <position height="-1" width="-1" x="688" y="370"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
