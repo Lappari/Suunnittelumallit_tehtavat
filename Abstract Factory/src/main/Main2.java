@@ -25,7 +25,7 @@ public class Main2 {
 		}
 		try {
 //luetaan toteuttava tehdas properties-tiedostosta 
-			c = Class.forName(properties.getProperty("tehdas"));
+			c = Class.forName(properties.getProperty("adidas"));
 			tehdas = (Factory) c.newInstance();
 		} catch (Exception e) {
 			e.printStackTrace();
