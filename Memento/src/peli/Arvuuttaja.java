@@ -13,10 +13,9 @@ public class Arvuuttaja {
 		return new Memento(this.arpa);		
 	}
 	
-	public Boolean tarkistus(Object o, int arvaus) {
+	public synchronized Boolean tarkistus(Object o, int arvaus) {
 		Memento memento = (Memento) o;
 		this.arpa = memento.arpa;
-
 		return this.arpa == arvaus;
 	}
 	
@@ -24,8 +23,8 @@ public class Arvuuttaja {
 		private int arpa;
 		
 		public Memento(int arpa) {
-			//System.out.println("Salainen vastaus "+arpa);
-			this.arpa = arpa;
+				//System.out.println("Salainen vastaus "+arpa);
+				this.arpa = arpa;
 		}
 	}
 }
