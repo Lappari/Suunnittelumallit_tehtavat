@@ -28,7 +28,7 @@ public class Ivysaur extends State {
 			c.setName("Venusaur"); // jos default nimi käytössä vaihdetaan nimi seuraavan muodon nimeen
 		}			
 		c.setPokemonEvolution(s);
-		c.setLvlExpMultiplayer(155);
+		c.setLvlExpMultiplayer(400);
 	}
 	
 	public void pokedexEntry() {

@@ -28,7 +28,7 @@ public class Charmaleon extends State {
 			c.setName("Charizard"); // jos default nimi käytössä vaihdetaan nimi seuraavan muodon nimeen
 		}			
 		c.setPokemonEvolution(s);
-		c.setLvlExpMultiplayer(155);
+		c.setLvlExpMultiplayer(400);
 	}
 	
 	public void pokedexEntry() {

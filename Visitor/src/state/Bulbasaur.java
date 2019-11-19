@@ -25,7 +25,7 @@ public class Bulbasaur extends State {
 		if(c.getName()=="Bulbasaur") c.setName("Ivysaur"); //jos default nimi käytössä vaihdetaan nimi seuraavan muodon nimeen
 		
 		c.setPokemonEvolution(s);
-		c.setLvlExpMultiplayer(150);
+		c.setLvlExpMultiplayer(180);
 	}
 	
 	public void pokedexEntry() {

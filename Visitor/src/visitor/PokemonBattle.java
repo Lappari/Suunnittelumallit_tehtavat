@@ -12,11 +12,11 @@ public class PokemonBattle extends AVisitor {
 	private void visit(PokemonContext winner, PokemonContext loser) {
 		
 		
-		System.out.println("\nTaistelun voitti "+winner.getName()+"\n"+winner.getName()+" sain voitosta "+(loser.getLvl() * 100)+"exp\n");
-		System.out.println("Taistelun hävisi "+loser.getName()+"\n"+loser.getName()+" sain tappiosta "+(winner.getLvl() * 3)+"exp\n");
+		System.out.println("\nTaistelun voitti "+winner.getName()+"\n"+winner.getName()+" sai voitosta "+(loser.getLvl() * 100)+"exp\n");
+		System.out.println("Taistelun hävisi "+loser.getName()+"\n"+loser.getName()+" sai tappiosta "+(winner.getLvl() * 3)+"exp\n");
 		
-		winner.addExp(loser.getLvl() * 100);
-		loser.addExp(winner.getLvl() * 3);
+		winner.addExp(loser.getLvl() * 75);
+		loser.addExp(winner.getLvl() * 5);
 		scanner.nextLine();
 		
 		// tarkistetaan saiko voittaja tai häviäkä levelin
@@ -58,15 +58,15 @@ public class PokemonBattle extends AVisitor {
 			
 			System.out.println("Kierros "+round);
 			if (fireRoll <=75) {
-				System.out.println(fire.getName() + " hyökkäsi ja osui tehden " + (int)(fire.getAtk()-leaf.getDef()*0.7)+" pistettä vahinkoa.");
-				leaf.setHp((int)(leaf.getHp()-(fire.getAtk()-leaf.getDef()*0.7)));
+				System.out.println(fire.getName() + " hyökkäsi ja osui tehden " + (int)(fire.getAtk()-(leaf.getDef()*0.5))+" pistettä vahinkoa.");
+				leaf.setHp((int)(leaf.getHp()-(fire.getAtk()-(leaf.getDef()*0.5))));
 			} else{
 				System.out.println(fire.getName() + " hyökkäsi ja mutta ei osunut.");
 			}
 				
 			if (leafRoll <=75) {
-				System.out.println(leaf.getName() + " hyökkäsi ja osui tehden " + (int)(leaf.getAtk()-fire.getDef()*0.7)+" pistettä vahinkoa.");
-				fire.setHp((int)(fire.getHp()-(leaf.getAtk()-fire.getDef()*0.7)));
+				System.out.println(leaf.getName() + " hyökkäsi ja osui tehden " + (int)(leaf.getAtk()-(fire.getDef()*0.5))+" pistettä vahinkoa.");
+				fire.setHp((int)(fire.getHp()-(leaf.getAtk()-(fire.getDef()*0.5))));
 			} else{
 				System.out.println(leaf.getName() + " hyökkäsi ja mutta ei osunut.");
 			}

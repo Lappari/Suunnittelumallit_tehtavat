@@ -25,14 +25,14 @@ public class LvlUpvisitor extends AVisitor {
 
 		while (c.getExp() > (c.getLvl() * c.getLvlExpMultiplayer())) {
 			if (c.getLvl() < 1) {// alustetaan pokemonille aloitus pisteet
-				c.setAtk(r.nextInt(8) + 7);
-				c.setDef(r.nextInt(7) + 5);
+				c.setAtk(r.nextInt(4) + 14);
+				c.setDef(r.nextInt(4) + 8);
 				c.setMaxHp(r.nextInt(10) + 30);
 				c.setLvl(1);
 			} else {
-				c.setAtk(c.getAtk() + r.nextInt(6) + 1);
-				c.setDef(c.getDef() + r.nextInt(4) + 1);
-				c.setMaxHp(c.getMaxHp() + r.nextInt(15) + 11);
+				c.setAtk(c.getAtk() + r.nextInt(3) + 4);
+				c.setDef(c.getDef() + r.nextInt(2) + 3);
+				c.setMaxHp(c.getMaxHp() + r.nextInt(7) + 19);
 				c.setLvl(c.getLvl() + 1);
 			}
 		}
@@ -42,7 +42,7 @@ public class LvlUpvisitor extends AVisitor {
 			c.printInfo();
 			scanner.nextLine();
 		} else if (c.getLvl() != 1) {
-			System.out.println("Sai level!");
+			System.out.println("Sai levelin!");
 			c.printInfo();
 			scanner.nextLine();
 		}
@@ -52,9 +52,9 @@ public class LvlUpvisitor extends AVisitor {
 	// CHARMALEON lvlup
 	public void lvlUp(PokemonContext c, Charmaleon asd) {
 		while (c.getExp() > (c.getLvl() * c.getLvlExpMultiplayer())) {
-			c.setAtk(c.getAtk() + r.nextInt(7) + 3);
-			c.setDef(c.getDef() + r.nextInt(5) + 2);
-			c.setMaxHp(c.getMaxHp() + r.nextInt(18) + 14);
+			c.setAtk(c.getAtk() + r.nextInt(4) + 12);
+			c.setDef(c.getDef() + r.nextInt(3) + 6);
+			c.setMaxHp(c.getMaxHp() + r.nextInt(9) + 23);
 			c.setLvl(c.getLvl() + 1);
 
 		}
@@ -64,7 +64,7 @@ public class LvlUpvisitor extends AVisitor {
 			c.printInfo();
 			scanner.nextLine();
 		} else if (c.getLvl() != 1) {
-			System.out.println("Sai level!");
+			System.out.println("Sai levelin!");
 			c.printInfo();
 			scanner.nextLine();
 		}
@@ -72,15 +72,15 @@ public class LvlUpvisitor extends AVisitor {
 	}
 
 	// CHARIZARD lvlup
-	public void charizardLvlUp(PokemonContext c, Charizard asd) {
+	public void lvlUp(PokemonContext c, Charizard asd) {
 		while (c.getExp() > (c.getLvl() * c.getLvlExpMultiplayer())) {
-			c.setAtk(c.getAtk() + r.nextInt(9) + 5);
-			c.setDef(c.getDef() + r.nextInt(6) + 4);
-			c.setMaxHp(c.getMaxHp() + r.nextInt(20) + 16);
+			c.setAtk(c.getAtk() + r.nextInt(4) + 12);
+			c.setDef(c.getDef() + r.nextInt(3) + 9);
+			c.setMaxHp(c.getMaxHp() + r.nextInt(10) + 26);
 			c.setLvl(c.getLvl() + 1);
 		}
 
-		System.out.println("Sai level!");
+		System.out.println("Sai levelin!");
 		c.printInfo();
 		scanner.nextLine();
 
@@ -95,14 +95,14 @@ public class LvlUpvisitor extends AVisitor {
 
 		while (c.getExp() > (c.getLvl() * c.getLvlExpMultiplayer())) {
 			if (c.getLvl() < 1) {// alustetaan pokemonille aloitus pisteet
-				c.setAtk(r.nextInt(8) + 5);
-				c.setDef(r.nextInt(7) + 7);
+				c.setAtk(r.nextInt(4) + 12);
+				c.setDef(r.nextInt(3) + 11);
 				c.setMaxHp(r.nextInt(8) + 32);
 				c.setLvl(1);
 			} else {
-				c.setAtk(c.getAtk() + r.nextInt(2) + 1);
-				c.setDef(c.getDef() + r.nextInt(6) + 1);
-				c.setMaxHp(c.getMaxHp() + r.nextInt(15) + 13);
+				c.setAtk(c.getAtk() + r.nextInt(2) + 3);
+				c.setDef(c.getDef() + r.nextInt(4) + 4);
+				c.setMaxHp(c.getMaxHp() + r.nextInt(10) + 20);
 				c.setLvl(c.getLvl() + 1);
 			}
 		}
@@ -112,7 +112,7 @@ public class LvlUpvisitor extends AVisitor {
 			c.printInfo();
 			scanner.nextLine();
 		} else if (c.getLvl() != 1) {
-			System.out.println("Sai level!");
+			System.out.println("Sai levelin!");
 			c.printInfo();
 			scanner.nextLine();
 		}
@@ -122,12 +122,12 @@ public class LvlUpvisitor extends AVisitor {
 	// VENUSAUR lvlup
 	public void lvlUp(PokemonContext c, Venusaur sad) {
 		while (c.getExp() > (c.getLvl() * c.getLvlExpMultiplayer())) {
-			c.setAtk(c.getAtk() + r.nextInt(5) + 4);
-			c.setDef(c.getDef() + r.nextInt(7) + 5);
-			c.setMaxHp(c.getMaxHp() + r.nextInt(20) + 20);
+			c.setAtk(c.getAtk() + r.nextInt(3) + 10);
+			c.setDef(c.getDef() + r.nextInt(3) + 14);
+			c.setMaxHp(c.getMaxHp() + r.nextInt(15) + 30);
 			c.setLvl(c.getLvl() + 1);
 		}
-		System.out.println("Sai level!");
+		System.out.println("Sai levelin!");
 		c.printInfo();
 		scanner.nextLine();
 		c.setHp(c.getMaxHp());
@@ -136,9 +136,9 @@ public class LvlUpvisitor extends AVisitor {
 	// IVYSAUR lvlup
 	public void lvlUp(PokemonContext c, Ivysaur sad) {
 		while (c.getExp() > (c.getLvl() * c.getLvlExpMultiplayer())) {
-			c.setAtk(c.getAtk() + r.nextInt(5) + 2);
-			c.setDef(c.getDef() + r.nextInt(7) + 3);
-			c.setMaxHp(c.getMaxHp() + r.nextInt(18) + 14);
+			c.setAtk(c.getAtk() + r.nextInt(2) + 9);
+			c.setDef(c.getDef() + r.nextInt(4) + 9);
+			c.setMaxHp(c.getMaxHp() + r.nextInt(12) + 23);
 			c.setLvl(c.getLvl() + 1);
 
 		}
@@ -148,7 +148,7 @@ public class LvlUpvisitor extends AVisitor {
 			c.printInfo();
 			scanner.nextLine();
 		} else if (c.getLvl() != 1) {
-			System.out.println("Sai level!");
+			System.out.println("Sai levelin!");
 			c.printInfo();
 			scanner.nextLine();
 		}

@@ -14,7 +14,7 @@ public abstract class State {
 
 	public void getInfo(PokemonContext c) {
 		System.out.println("Nimi:" + c.getName() + " LVL:" + c.getLvl() + " EXP:" + c.getExp()+"/"+(c.getLvl()*c.getLvlExpMultiplayer()) + "\nATK:" + c.getAtk()
-				+ "\nDEF:" + c.getDef() + "\nHP:" + c.getHp());
+				+ "\nDEF:" + c.getDef() + "\nHP:" + c.getMaxHp());
 	}
 
 	public abstract void lvlUp(AVisitor lvlUp, PokemonContext c);

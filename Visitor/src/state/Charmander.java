@@ -25,7 +25,7 @@ public class Charmander extends State {
 		if(c.getName()=="Charmander") c.setName("Charmaleon"); //jos default nimi käytössä vaihdetaan nimi seuraavan muodon nimeen
 		
 		c.setPokemonEvolution(s);
-		c.setLvlExpMultiplayer(150);
+		c.setLvlExpMultiplayer(180);
 	}
 	
 	public void pokedexEntry() {
