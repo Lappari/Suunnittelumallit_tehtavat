@@ -4,6 +4,7 @@ public abstract class State {
 	
 	public void lvlUp(PokemonContext c) {}
 	public void pokedexEntry() {}
+	@SuppressWarnings("unused")
 	private void evolve(PokemonContext c, State s) {}
 	
 	public void addExp(PokemonContext c,int exp) { 
