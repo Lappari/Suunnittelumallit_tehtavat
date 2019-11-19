@@ -16,13 +16,13 @@ public class Main {
 		
 		List<String> sanat = new ArrayList<String>();
 		sanat.add("kissa ");
-		sanat.add("kapusi ");
-		sanat.add("tikkaita ");
+		sanat.add("kävelee ");
+		sanat.add("tikapuita ");
+		sanat.add("pitkin ");
 		sanat.add("taivaaseen ");
-		sanat.add("tikkaat ");
+		sanat.add("tikapuut ");
 		sanat.add("katkes ");
-		sanat.add("kissan ");
-		sanat.add("maha");
+		sanat.add("kissan");
 		
 		tulostaja.selectStrategy(new IteratorStrategy());
 		tulostus = tulostaja.ListConverter(sanat);
