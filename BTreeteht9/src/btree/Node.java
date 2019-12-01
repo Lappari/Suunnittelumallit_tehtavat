@@ -10,20 +10,20 @@ package btree;
  * @author kamaj
  */
 public class Node {
-    private int data;
+    private String data;
     private BinaryTree left;
     private BinaryTree right;
 
-    public Node(int value) {
-        data = value;
+    public Node(String value) {
+        data = new String(value);
         left = right = null;
     }
-    public  Node (int value, BinaryTree left, BinaryTree right) {
-        data = value;
+    public  Node (String value, BinaryTree left, BinaryTree right) {
+        data = new String(value);
         this.left = left;
         this.right = right;
     }
-    public int getData() {
+    public String getData() {
         return data;
     }
     public BinaryTree left() {
