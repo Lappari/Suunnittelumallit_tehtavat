@@ -15,7 +15,7 @@ public class BinaryTree {
 	public static String found; // findWithPreOrder()-operaation apurakenne
 
 	public BinaryTree(String rootValue) {
-		root = new Node(rootValue);
+		setRoot(new Node(rootValue));
 	}
 
 	/*
@@ -24,34 +24,35 @@ public class BinaryTree {
 	 */
 
 	public void preOrder() {
-		if (root != null) {
-			System.out.println(root.getData() + ',');
-			if (root.left() != null) // pääseeekö vasemmalle?
-				root.left().preOrder();
-			if (root.right() != null) // pääseekö oikealle?
-				root.right().preOrder();
+		if (getRoot() != null) {
+			System.out.println(getRoot().getData() + ',');
+			if (getRoot().left() != null) // pääseeekö vasemmalle?
+				getRoot().left().preOrder();
+			if (getRoot().right() != null) // pääseekö oikealle?
+				getRoot().right().preOrder();
 		}
 
 	}
 
 	public boolean findOrder(String haku) {
-		boolean bFound =false;
-		if (root != null) {
+		boolean bFound = false;
+		if (getRoot() != null) {
 			// System.out.println(root.getData()+',');
-			if (root.getData().equals(haku)) {
+			if (getRoot().getData().equals(haku)) {
 				found += "juuressa ";
 				bFound = true;
 			} else {
 
-				if (root.left() != null) {
+				if (getRoot().left() != null && !bFound) {
+					System.out.println(getRoot().left().getRoot().getData());
 					found += "vasen ";
-					bFound = root.left().findOrder(haku);// pääseeekö vasemmalle?
+					bFound = getRoot().left().findOrder(haku);// pääseeekö vasemmalle?
 				}
-					
-				if (root.right() != null && !bFound) { // pääseekö oikealle?
+
+				if (getRoot().right() != null && !bFound) { // pääseekö oikealle?
 					found += "oikea ";
-					bFound = root.right().findOrder(haku);
-				}				
+					bFound = getRoot().right().findOrder(haku);
+				}
 			}
 
 		}
@@ -61,20 +62,20 @@ public class BinaryTree {
 	// löydetty alipuu asetetaan staattiseen muuttujaan found
 	public void findWithPreOrder(BinaryTree newTree) {
 
-		if (root != null) {
+		if (getRoot() != null) {
 			// System.out.print(root.getData()+ ": muokkaatko tätä?");
-			if (stringCompare(newTree.root.getData(), root.getData()) < 0) {
-				if (root.left() == null) {
+			if (stringCompare(newTree.getRoot().getData(), getRoot().getData()) < 0) {
+				if (getRoot().left() == null) {
 					setLeft(newTree);
-				} else if (root.left() != null) {// pääseekö vasemmalle?
-					root.left().findWithPreOrder(newTree);
+				} else if (getRoot().left() != null) {// pääseekö vasemmalle?
+					getRoot().left().findWithPreOrder(newTree);
 				}
 
-			} else if (stringCompare(newTree.root.getData(), root.getData()) > 0) {
-				if (root.right() == null) {
+			} else if (stringCompare(newTree.getRoot().getData(), getRoot().getData()) > 0) {
+				if (getRoot().right() == null) {
 					setRight(newTree);
-				} else if (root.right() != null) {// pääseekö oikealle?
-					root.right().findWithPreOrder(newTree);
+				} else if (getRoot().right() != null) {// pääseekö oikealle?
+					getRoot().right().findWithPreOrder(newTree);
 				}
 
 			}
@@ -92,11 +93,11 @@ public class BinaryTree {
 	}
 
 	public void setLeft(BinaryTree tree) {
-		root.setLeft(tree);
+		getRoot().setLeft(tree);
 	}
 
 	public void setRight(BinaryTree tree) {
-		root.setRight(tree);
+		getRoot().setRight(tree);
 	}
 
 	// stringgi vertailu
@@ -122,5 +123,41 @@ public class BinaryTree {
 		else {
 			return 0;
 		}
+	}
+
+	public BinaryTree findOrderDelete(String poisto) {
+		BinaryTree tFound = null;
+		if (getRoot() != null && tFound == null) {
+			/*
+			 * if (root.getData().equals(poisto)) { tFound = this; }
+			 */
+
+			if (root.left() != null && root.left().root.getData().equals(poisto) && tFound == null) {
+				tFound = root.left();
+				root.setLeft(null);
+				return tFound;
+			}else if(root.left() != null && tFound == null) {
+				tFound = root.left().findOrderDelete(poisto);// pääseeekö vasemmalle?
+				
+			}
+			
+			if(root.right() != null && root.right().root.getData().equals(poisto) && tFound == null) { // pääseekö oikealle?
+				tFound = root.right();
+				root.setRight(null);
+				return tFound;
+			}else if(root.right() != null && tFound == null) { // pääseekö oikealle?
+				tFound = root.right().findOrderDelete(poisto);
+			}
+
+		}
+		return tFound;
+	}
+
+	public Node getRoot() {
+		return root;
+	}
+
+	public void setRoot(Node root) {
+		this.root = root;
 	}
 }
